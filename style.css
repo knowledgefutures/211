@@ -169,6 +169,7 @@ span {
 .count {
 	display: flex;
 	justify-content: space-between;
+	position: relative;
 }
 .shadow {
 	opacity: 0.5;
@@ -217,4 +218,35 @@ li span {
 			}
 		}
 	}
+}
+
+#uh-oh,
+#hooray {
+	font-size: 5em;
+	position: absolute;
+	bottom: -44px;
+	right: -106px;
+	transform: scale(0);
+	opacity: 1;
+	z-index: -1;
+	.left {
+		position: relative;
+		left: 0.5em;
+		transform: rotate(-30deg);
+		display: inline-block;
+		z-index: -1;
+	}
+	.right {
+		position: relative;
+		right: 0.5em;
+		transform: rotate(30deg);
+		display: inline-block;
+		z-index: -1;
+	}
+}
+#uh-oh.active,
+#hooray.active {
+	transform: scale(1) translateY(-100px);
+	opacity: 0;
+	transition: transform 2s ease-out, opacity 1.5s 0.5s linear;
 }

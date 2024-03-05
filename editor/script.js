@@ -4,6 +4,9 @@ const jargonNode = document.getElementById('jargon');
 const wordCountNode = document.getElementById('word-count');
 const allwordsNode = document.getElementById('allwords');
 const wordListNode = document.getElementById('word-list');
+const uhohNode = document.getElementById('uh-oh');
+const hoorayNode = document.getElementById('hooray');
+let previousWordCount = null;
 
 const parseWords = () => {
 	const jargonList = document.createElement('ul');
@@ -17,6 +20,19 @@ const parseWords = () => {
 		.filter((word) => word.length);
 	const wordCount = inputWords.length;
 	wordCountNode.innerHTML = wordCount > 211 ? `<span>${wordCount}</span>` : wordCount;
+	if (previousWordCount !== null && previousWordCount < 212 && wordCount >= 212) {
+		uhohNode.className = 'active';
+		setTimeout(() => {
+			uhohNode.className = '';
+		}, 2000);
+	}
+	if (previousWordCount !== null && previousWordCount >= 212 && wordCount < 212) {
+		hoorayNode.className = 'active';
+		setTimeout(() => {
+			hoorayNode.className = '';
+		}, 2000);
+	}
+	previousWordCount = wordCount;
 	const seenWords = {};
 	let hasInvalidWords = false;
 	inputWords
@@ -38,7 +54,7 @@ const parseWords = () => {
 			const wordNode = document.createElement('li');
 			const textnode = document.createElement('div');
 			textnode.innerHTML = word;
-			textnode.className = "text";
+			textnode.className = 'text';
 			const isValid = wordObject && wordObject.rank <= 2048;
 			if (!isValid) {
 				hasInvalidWords = true;
