@@ -1,0 +1,12 @@
+{
+	"name": "210s",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"parse": "node editor/parse.js"
+	},
+	"dependencies": {
+		"csv-parse": "^5.5.5"
+	}
+}

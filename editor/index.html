@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script type="text/javascript" src="/editor/words.js"></script>
+		<script type="text/javascript" src="/editor/script.js" defer></script>
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="/style.css" />
+		<title>211 Editor</title>
+		<meta
+			name="description"
+			content="211s are short, simple statements of an idea that are no more than 211 words long, and use only the 2^11 most common English words."
+		/>
+	</head>
+	<body>
+		<nav>
+			<div><a href="/">211</a></div>
+			<ul>
+				<li><a href="/">Posts</a></li>
+				<li><a href="/editor">Editor</a></li>
+			</ul>
+		</nav>
+		<main class="editor">
+			<div class="description">
+				211s are short, simple statements of an idea that are no more than 211 words long,
+				and use only the 2<sup>11</sup> most common English words.
+			</div>
+			<div id="editor-wrapper">
+				<div id="editor">
+					<textarea id="text" autofocus></textarea>
+					<div id="mask"></div>
+				</div>
+			</div>
+			<div class="details">
+				<div class="count">
+					<div class="detail-title">Word count</div>
+					<div id="word-count"></div>
+				</div>
+				<div class="word-list" id="word-list">
+					<div class="detail-header">
+						<div class="detail-title hide-on-all">Words to Change</div>
+						<div class="detail-title show-on-all">All Words</div>
+						<div>
+							<label for="allwords">All words</label>
+							<input type="checkbox" id="allwords" name="allwords" value="All" />
+						</div>
+					</div>
+					<div id="jargon"></div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<a href="https://github.com/knowledgefutures/211">Code</a>
+			<span>·</span>
+			Word data from <a href="https://www.wordfrequency.info/">wordfrequency.info</a>
+		</footer>
+	</body>
+</html>
