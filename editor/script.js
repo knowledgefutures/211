@@ -60,7 +60,8 @@ const parseWords = () => {
 				hasInvalidWords = true;
 			}
 			const countNode = document.createElement('span');
-			countNode.textContent = wordObject ? wordObject.rank : '5000+';
+			// countNode.innerHTML = wordObject ? `2<sup>${Math.log2(wordObject.rank).toFixed(3)}</sup> (${wordObject.rank})` : '5000+';
+			countNode.innerHTML = wordObject ? wordObject.rank : '5000+';
 			wordNode.className = isValid ? 'valid' : 'not-valid';
 			wordNode.appendChild(textnode);
 			wordNode.appendChild(countNode);

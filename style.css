@@ -99,6 +99,14 @@ footer {
 #post-list {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
+.heading {
+	font-size: 1.5em;
+	color: #999;
+	border-bottom: 1px solid #ccc;
+	max-width: 500px;
+	/* font-weight: bold; */
+	margin: 2em 0em 1em;
+}
 
 .post-listing {
 	margin-bottom: 2em;
